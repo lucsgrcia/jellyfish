@@ -1,0 +1,16 @@
+{
+  "name": "tokens",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.5.3",
+    "@tokens-studio/sd-transforms": "^2.0.3"
+
+  }
+}
