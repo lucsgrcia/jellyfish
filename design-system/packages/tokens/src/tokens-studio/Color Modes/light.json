@@ -1,0 +1,90 @@
+{
+  "jf": {
+    "color": {
+      "accent": {
+        "200": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "lighten",
+                "value": "0.2",
+                "space": "srgb"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{jf.color.accent.300}"
+        },
+        "300": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "lighten",
+                "value": "0.2",
+                "space": "srgb"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{jf.color.accent.400}"
+        },
+        "400": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "lighten",
+                "value": "0.4",
+                "space": "srgb"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "lch(52.1 26.7 182)"
+        },
+        "500": {
+          "$type": "color",
+          "$value": "lch(52.1 26.7 182)"
+        },
+        "600": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "darken",
+                "value": "0.2",
+                "space": "srgb"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{jf.color.accent.500}"
+        },
+        "700": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "darken",
+                "value": "0.2",
+                "space": "srgb"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{jf.color.accent.600}"
+        },
+        "800": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "darken",
+                "value": "0.2",
+                "space": "srgb"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{jf.color.accent.700}"
+        }
+      }
+    }
+  }
+}
