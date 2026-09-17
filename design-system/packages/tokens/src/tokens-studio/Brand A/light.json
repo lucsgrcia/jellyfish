@@ -1,0 +1,14 @@
+{
+  "bg": {
+    "$type": "color",
+    "$value": "{color.bg}"
+  },
+  "regular": {
+    "$type": "fontWeights",
+    "$value": "{fontWeights.inter-0}"
+  },
+  "bold": {
+    "$type": "fontWeights",
+    "$value": "{fontWeights.inter-600}"
+  }
+}

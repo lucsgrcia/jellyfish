@@ -1,6 +1,8 @@
 {
   "tokenSetOrder": [
-    "jf",
-    "$extensions"
+    "01 - PRIMITIVES",
+    "$extensions",
+    "Brand A/light",
+    "Brand A/dark"
   ]
 }
