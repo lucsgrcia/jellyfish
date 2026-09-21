@@ -1,2 +1,0 @@
-# jellyfish
-Design System repo
