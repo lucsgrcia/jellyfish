@@ -10,6 +10,14 @@
       "env": {
         "API_KEY": "${CODA_API_KEY}"
       }
+    },
+    "pas-cms": {
+      "type": "http",
+      "url": "https://development-team.dsv.pas.app.br/cms/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${PAS_CMS_TOKEN}",
+        "X-Tenant-ID": "development-team"
+      }
     }
   }
 }

@@ -9,6 +9,7 @@ import { register, expandTypesMap } from '@tokens-studio/sd-transforms';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const TOKENS_DIR = path.join(__dirname, 'src/tokens-studio');
+const DIST_DIR = path.join(__dirname, 'dist');
 
 register(StyleDictionary);
 
@@ -336,7 +337,6 @@ async function buildBase(tmpDir, fileForSet, baseSetKeys, baseBuckets) {
     },
   });
 
-  await sd.cleanAllPlatforms();
   await sd.buildAllPlatforms();
 }
 
@@ -375,7 +375,6 @@ async function buildTheme(tmpDir, fileForSet, baseSetKeys, theme) {
     },
   });
 
-  await sd.cleanAllPlatforms();
   await sd.buildAllPlatforms();
 }
 
@@ -403,13 +402,17 @@ async function buildTailwindPreset(tmpDir, fileForSet, baseSetKeys, themes) {
     },
   });
 
-  await sd.cleanAllPlatforms();
   await sd.buildAllPlatforms();
 }
 
 async function build() {
   const { raw, themes, baseSetKeys, baseBuckets } = await loadManifest();
   const allSetKeys = [...new Set([...baseSetKeys, ...themes.flatMap((t) => t.modeSetKeys)])];
+
+  // Cleaned once up front instead of per Style Dictionary instance: the
+  // builds below run in parallel and share dist/, so a per-instance
+  // cleanAllPlatforms() can delete files/dirs another build is writing.
+  await rm(DIST_DIR, { recursive: true, force: true });
 
   const tmpDir = await mkdtemp(path.join(tmpdir(), 'ds-tokens-'));
   try {

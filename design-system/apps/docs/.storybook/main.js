@@ -1,11 +1,11 @@
-import { dirname, join, resolve } from "path";
+import { dirname, join } from "path";
 
 function getAbsolutePath(value) {
   return dirname(require.resolve(join(value, "package.json")));
 }
 
 const config = {
-  stories: ["../stories/*.stories.tsx", "../stories/**/*.stories.tsx"],
+  stories: ["../stories/**/*.stories.tsx"],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
@@ -27,19 +27,11 @@ const config = {
     componentsManifest: true,
   },
 
-  async viteFinal(config, { configType }) {
+  async viteFinal(config) {
     // customize the Vite config here
     return {
       ...config,
       define: { "process.env": {} },
-      resolve: {
-        alias: [
-          {
-            find: "ui",
-            replacement: resolve(__dirname, "../../../packages/ui/"),
-          },
-        ],
-      },
     };
   },
 
